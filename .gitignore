@@ -1,0 +1,27 @@
+# Terraform/OpenTofu state
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+tofu-plan
+tofu-plan-test
+
+# Variables and Secrets
+*.tfvars
+*.tfvars.json
+*.tfvars.sops
+.sops.yaml
+
+# Local configuration
+.env
+.env.*
+
+# Backup files
+*.backup
+*.old
+
+# Gemini CLI / Claude temporary files
+.claude/
+.gemini/
+MEMORY.md.original
+CLAUDE.md.original
