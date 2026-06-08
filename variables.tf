@@ -1,3 +1,31 @@
+variable "talos_version" {
+  description = "Talos version to deploy (e.g. v1.9.0)"
+  type        = string
+}
+
+variable "talos_cluster_name" {
+  description = "Talos cluster name"
+  type        = string
+}
+
+variable "talos_netbird_setup_key" {
+  description = "Netbird setup key for Talos nodes"
+  type        = string
+  sensitive   = true
+}
+
+variable "talos_netbird_management_url" {
+  description = "Netbird management URL for Talos nodes (empty = use default)"
+  type        = string
+  default     = ""
+}
+
+variable "prod3_host" {
+  description = "SSH hostname for prod3 VM (e.g. prod3.home.sf.cktom.cyou)"
+  type        = string
+  default     = "prod3.home.sf.cktom.cyou"
+}
+
 variable "proxmox_insecure" {
   description = "Skip TLS verification for self-signed certificates"
   type        = bool
