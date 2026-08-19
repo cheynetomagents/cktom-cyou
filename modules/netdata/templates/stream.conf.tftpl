@@ -1,0 +1,17 @@
+# Managed by OpenTofu (modules/netdata). Do not edit by hand.
+# https://learn.netdata.cloud/docs/observability-centralization-points/metrics-centralization-points/configuration
+
+%{ if is_parent ~}
+[API_KEY]
+    enabled = yes
+    default memory mode = dbengine
+%{ else ~}
+[stream]
+    enabled = yes
+    destination = ${stream_parent_host}:${stream_parent_port}
+    api key = ${stream_api_key}
+    timeout seconds = 60
+    default port = ${stream_parent_port}
+    buffer size bytes = 10485760
+    reconnect delay seconds = 5
+%{ endif ~}

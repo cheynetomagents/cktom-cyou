@@ -1,0 +1,8 @@
+# Managed by OpenTofu (modules/netdata). Do not edit by hand.
+# go.d/prometheus.conf — scrape jobs for co-located app metrics endpoints.
+jobs:
+%{ for c in collectors ~}
+  - name: ${c.job_name}
+    url: ${c.url}
+    update_every: ${c.update_every}
+%{ endfor ~}
